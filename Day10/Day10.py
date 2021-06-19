@@ -40,7 +40,7 @@ print(df.iloc[[2]])
 #reading and writing data
 #read_csv is used to read data from a csv file
 data = pd.read_csv('GamesSales.csv', index_col=0)
-df = pd.DataFrame(data)
+# df = pd.DataFrame(data)
 print("Values in file are :-----------------------------", df)
 
 print(df.columns)
@@ -72,7 +72,7 @@ print(df.EmpName[2])
 #using loc and iloc
 print(df.loc[:])
 print(df.loc[0:2,:])
-print(df.loc[2:4,'EmpId':'Department'])
+print(" ....", df.loc[2:4,'EmpId':'Department'])
 
 print(df.iloc[2:5,0:2])
 print(df.iloc[:,1:4])

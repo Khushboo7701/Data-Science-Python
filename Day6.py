@@ -22,6 +22,8 @@ To install numpy, run the command- pip install numpy.
 
 #Creating numpy arrays
 import numpy as np
+a = np.array([1,2,3,5])
+print(a)
 a = np.array([10,20,30,40,50,60], dtype=object) #1D array
 print("1D array\n",a)
 a = np.zeros((1,2),dtype='i') #creates a 1x2 array filled with zeros
@@ -81,6 +83,9 @@ print(a) #['a' 'b' 'f' 'd' 'e']
 print(b) #['a' 'b' 'c' 'd' 'e']
 print(b.base) #None
 
+'''Every NumPy array has the attribute base that returns None if the array owns the data.
+Otherwise, the base  attribute refers to the original object.
+'''
 a = np.array([10,20,30,40,50])
 b = a.view()
 a[0] = 100
@@ -105,6 +110,7 @@ U - unicode string
 '''
 a = np.array([10,20,30,40,50,60]) # we use dtype property to check the data type of a numpy array
 print(a.dtype) #int32
+print(type(a))
 
 b = np.array(['a', 'b', 'c'])
 print(b.dtype) #<U1
@@ -118,6 +124,8 @@ print(a.dtype) #|S1
 a = np.array([10,20,30,40,50,60]) # we use dtype property to check the data type of a numpy array
 print(a.dtype) #int32
 b = a.astype('float')
+a = a.astype('float')
+print(a.dtype)
 print(b.dtype) #float64
 b = np.array([1, 0, 3])
 b = b.astype(bool)

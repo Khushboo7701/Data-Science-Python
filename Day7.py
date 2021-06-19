@@ -9,16 +9,17 @@ solve linear or tensor equations and much more!
 '''
 
 import numpy as np
+from numpy.lib import vectorize
  
 A = np.array([[6, 1, 1],
               [4, -2, 5],
               [2, 8, 7]])
- 
+
 # Rank of a matrix
-print("Rank of A:", np.linalg.matrix_rank(A))
+print("Rank of A:", np.linalg.matrix_rank(A)) #no of rows
  
 # Trace of matrix A
-print("\nTrace of A:", np.trace(A))
+print("\nTrace of A:", np.trace(A)) #sum of diagonal elements
  
 # Determinant of a matrix
 print("\nDeterminant of A:", np.linalg.det(A))
@@ -67,7 +68,7 @@ print (np.dot(x,y))
 'This  function returns the matrix product of two arrays'
 a = [[1,0],[0,1]] 
 b = [[4,1],[2,2]] 
-print (np.matmul(a,b))
+print ("Matrix multiplication: ",np.matmul(a,b))
 
 
 #2.Using numpy arrays
@@ -226,12 +227,12 @@ we can get the date in a numpy array in a particular format
 i.e year-month-day by using numpy.datetime64() method.
 '''
 
-g = np.array(np.datetime64('2019-08-26'))
+g = np.datetime64('2019-08-26')
   
 print(g)
 print(type(g))
 
-g = np.array(np.datetime64('2019-08', 'D'))
+g = np.datetime64('2019-08', 'D')
 print(g)
 print(type(g))
 
@@ -239,8 +240,9 @@ print(type(g))
 from dateutil import parser
 date = parser.parse("4th of July, 2019")
 print(date)
-
+print(type(date))
 #date time arithmetic
-np.datetime64('2000-05') + np.timedelta64(15, 'D')
+print(np.datetime64('2000-05') + np.timedelta64(15, 'D'))
 date = np.datetime64('2000-05-16')
 print(date)
+print(type(date))

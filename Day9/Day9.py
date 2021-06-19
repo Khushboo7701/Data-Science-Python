@@ -52,7 +52,7 @@ print(df)
 d = {"one": pd.Series([1.0, 2.0, 3.0], index=["a", "b", "c"]), "two": pd.Series([1.0, 2.0, 3.0, 4.0], index=["a", "b", "c", "d"]),}
 df = pd.DataFrame(d) #from dict of Series
 print(df)
-df = pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "three"])
+df = pd.DataFrame(d, index=["d", "b", "a","c"], columns=["two", "one"])
 print(df)
 
 d = {"one": [1.0, 2.0, 3.0, 4.0], "two": [4.0, 3.0, 2.0, 1.0]} #from dict of ndarrays
@@ -63,32 +63,32 @@ print(df)
 print(df["one"])
 #indexing a dataframe using loc
 d = {"one": pd.Series([1.0, 2.0, 3.0], index=["a", "b", "c"]), "two": pd.Series([1.0, 2.0, 3.0, 4.0], index=["a", "b", "c", "d"]),}
-df = pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "three"])
+df = pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "one"])
 first = df.loc["a"]
 second = df.loc["d"]
-print(first,"\n",second)
+print(first,"-",second)
 
 #Panel
 '''Panel is a three-dimensional data structure with heterogeneous data. 
 It is hard to represent the panel in graphical representation. 
 But a panel can be illustrated as a container of DataFrame.'''
 
-d = np.random.rand(2,4,5)
-p = pd.Panel(d) #from ndarrays
-print(p)
+# d = np.random.rand(2,4,5)
+# p = pd.Panel(d) #from ndarrays
+# print(p)
 
-#from dict of dataframes
-d = {"one" : pd.DataFrame(np.random.randn(4, 3)), "two" : pd.DataFrame(np.random.randn(4, 2))}
-p = pd.Panel(d)
-print(p)
+# #from dict of dataframes
+# d = {"one" : pd.DataFrame(np.random.randn(4, 3)), "two" : pd.DataFrame(np.random.randn(4, 2))}
+# p = pd.Panel(d)
+# print(p)
 
-#accessing element
-print(p["one"])
+# #accessing element
+# print(p["one"])
 
-#accessing using major axis
-print(p.major_xs(1))
-#accessing using minor axis
-print(p.minor_xs(1)) 
+# #accessing using major axis
+# print(p.major_xs(1))
+# #accessing using minor axis
+# print(p.minor_xs(1)) 
 
 #creating dataframe from text file
 with open("data.txt","r") as file:
@@ -111,11 +111,11 @@ df = pd.read_sql("select * from employee;", con)
 print(df)
 
 # #creating dataframe from api
-import requests
-r = requests.get('https://api.box.com/2.0/files/:file_id/content/')
-x = r.json()
-df = pd.DataFrame(x['content'])
-print(df)
+# import requests
+# r = requests.get('https://api.box.com/2.0/files/:file_id/content/')
+# x = r.json()
+# df = pd.DataFrame(x['content'])
+# print(df)
 
 #creating dataframe from dataframe object
 d1 = pd.DataFrame(df)

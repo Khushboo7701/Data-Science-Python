@@ -68,3 +68,25 @@ if not guessed:
 
 print('Thank you for playing!')
 
+# Output
+'''
+Enter a range of numbers in the given format: num1-num2
+ Eg. 100-200
+100-200
+Lucky number is:  116
+You get four guesses to guess the lucky number that lies in the entered range. Lets get started!
+Enter your first guess:
+192
+Please try again! The number you guessed is too high
+Enter your second guess:
+fneo
+Only integer guesses are allowed!
+Enter your second guess:
+Enter your third guess:
+119
+Please try again! The number you guessed is too high
+Enter your fourth and last guess:
+116
+Yeah! You identified the number.
+Thank you for playing!
+'''
